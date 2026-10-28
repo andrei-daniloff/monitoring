@@ -40,7 +40,10 @@ func (ms *MemStorage) Processing(res http.ResponseWriter, req *http.Request) {
 	}
 }
 
-var ms = &MemStorage{}
+var ms = &MemStorage{
+	counters: make(map[string]int64),
+	gauges:   make(map[string]float64),
+}
 
 type Validate struct{}
 
